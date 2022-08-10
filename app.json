@@ -4,6 +4,7 @@
     "slug": "Memo-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "privacy": "unlisted",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
