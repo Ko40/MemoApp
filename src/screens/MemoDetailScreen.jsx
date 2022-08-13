@@ -19,7 +19,7 @@ export default function MemoDetailScreen() {
           Shopping List is that you can use this list to check what you want to buy.
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit" />
     </View>
   );
 }
