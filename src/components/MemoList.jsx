@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet, TouchableOpacity,
+} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 export default function MemoList() {
@@ -10,18 +12,18 @@ export default function MemoList() {
           <Text style={styles.memoListTitle}>Shopping List</Text>
           <Text style={styles.memoListDate}>13/08/2022 14:00</Text>
         </View>
-        <View>
+        <TouchableOpacity>
           <Feather name="x" size={16} color="#B0B0B0" />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.memoList}>
         <View>
           <Text style={styles.memoListTitle}>Shopping List</Text>
           <Text style={styles.memoListDate}>13/08/2022 14:00</Text>
         </View>
-        <View>
+        <TouchableOpacity>
           <Feather name="x" size={16} color="#B0B0B0" />
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
