@@ -3,13 +3,12 @@ import {
   View, ScrollView, Text, StyleSheet,
 } from 'react-native';
 
-import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
-export default function MemoDetailScreen() {
+export default function MemoDetailScreen(props) {
+  const { navigation } = props;
   return (
     <View>
-      <AppBar />
       <View style={styles.memoHeader}>
         <Text style={styles.memoTytle}>Shopping List</Text>
         <Text style={styles.memoDate}>13/08/2022 14:00</Text>
@@ -19,7 +18,11 @@ export default function MemoDetailScreen() {
           Shopping List is that you can use this list to check what you want to buy.
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit" />
+      <CircleButton
+        style={{ top: 60, bottom: 'auto' }}
+        name="edit"
+        onPress={() => { navigation.navigate('Memo Edit'); }}
+      />
     </View>
   );
 }
