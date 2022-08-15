@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity,
+  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
+import firebase from 'firebase';
 
 import Button from '../components/Button';
 
@@ -9,6 +10,22 @@ export default function LogInScreen(props) {
   const { navigation } = props;
   const [ID, setID] = useState('');
   const [password, setPassword] = useState('');
+
+  function handlePress() {
+    firebase.auth().signInWithEmailAndPassword(ID, password)
+      .then((userCredential) => {
+        const { user } = userCredential;
+        console.log(user.uid);
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Memo List' }],
+        });
+      })
+      .catch((error) => {
+        Alert.alert(error.code);
+      });
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
@@ -34,12 +51,7 @@ export default function LogInScreen(props) {
         />
         <Button
           label="Login"
-          onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: 'Memo List' }],
-            });
-          }}
+          onPress={handlePress}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>You do not have an ID?</Text>
