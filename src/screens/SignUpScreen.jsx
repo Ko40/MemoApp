@@ -19,11 +19,10 @@ export default function SignUpScreen(props) {
         navigation.reset({
           index: 0,
           routes: [{ name: 'Memo List' }],
-        })
-          .catch((error) => {
-            console.log(error.code, error.massage);
-            Alert.alert(error.code);
-          });
+        });
+      })
+      .catch((error) => {
+        Alert.alert(error.code);
       });
   }
 
