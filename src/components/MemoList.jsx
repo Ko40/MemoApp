@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import {
   shape, string, instanceOf, arrayOf,
 } from 'prop-types';
+import { dateToString } from '../utils';
 
 export default function MemoList(props) {
   const { memos } = props;
@@ -16,11 +17,11 @@ export default function MemoList(props) {
     return (
       <TouchableOpacity
         style={styles.memoList}
-        onPress={() => { navigation.navigate('Memo Detail'); }}
+        onPress={() => { navigation.navigate('Memo Detail', { id: item.id }); }}
       >
         <View>
           <Text style={styles.memoListTitle} numberOfLines={1}>{item.bodyText}</Text>
-          <Text style={styles.memoListDate}>{String(item.updatedAt)}</Text>
+          <Text style={styles.memoListDate}>{dateToString(item.updateAt)}</Text>
         </View>
         <TouchableOpacity
           style={styles.memoDelete}
@@ -36,6 +37,7 @@ export default function MemoList(props) {
     <View style={styles.container}>
       <FlatList
         data={memos}
+        // eslint-disable-next-line react/jsx-no-bind
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
@@ -47,7 +49,7 @@ MemoList.propTypes = {
   memos: arrayOf(shape({
     id: string,
     bodyText: string,
-    updatedAt: instanceOf(Date),
+    updateAt: instanceOf(Date),
   })).isRequired,
 };
 
