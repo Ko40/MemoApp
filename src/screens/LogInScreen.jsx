@@ -31,9 +31,7 @@ export default function LogInScreen(props) {
   function handlePress() {
     setLoading(true);
     firebase.auth().signInWithEmailAndPassword(ID, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'Memo List' }],
@@ -74,7 +72,7 @@ export default function LogInScreen(props) {
         />
         <Button
           label="Login"
-          onPress={handlePress}
+          onPress={handlePress()}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>You do not have an ID?</Text>

@@ -16,7 +16,7 @@ export default function Loading(props) {
   );
 }
 
-Loading.prpTypes = {
+Loading.propTypes = {
   isLoading: bool,
 };
 
@@ -40,5 +40,5 @@ const styles = StyleSheet.create({
   },
   inner: {
     marginBottom: 80,
-  }
+  },
 });

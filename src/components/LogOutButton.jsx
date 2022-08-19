@@ -1,5 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import {
+  TouchableOpacity, Text, StyleSheet, Alert,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import firebase from 'firebase';
 
@@ -18,7 +20,7 @@ export default function LogOutButton() {
       });
   }
   return (
-    <TouchableOpacity onPress={handlePress} style={styles.container}>
+    <TouchableOpacity onPress={handlePress()} style={styles.container}>
       <Text style={styles.label}>Log out</Text>
     </TouchableOpacity>
   );

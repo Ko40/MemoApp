@@ -14,16 +14,13 @@ export default function SignUpScreen(props) {
 
   function handlePress() {
     firebase.auth().createUserWithEmailAndPassword(ID, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'Memo List' }],
         });
       })
       .catch((error) => {
-        console.log(error.code, error.message);
         const errorMsg = translateErrors(error.code);
         Alert.alert(errorMsg.title, errorMsg.description);
       });
@@ -54,7 +51,7 @@ export default function SignUpScreen(props) {
         />
         <Button
           label="Submit"
-          onPress={handlePress}
+          onPress={handlePress()}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>If you have an ID,</Text>
