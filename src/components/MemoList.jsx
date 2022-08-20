@@ -43,7 +43,7 @@ export default function MemoList(props) {
         style={styles.memoList}
         onPress={() => { navigation.navigate('Memo Detail', { id: item.id }); }}
       >
-        <View>
+        <View style={styles.memoInner}>
           <Text style={styles.memoListTitle} numberOfLines={1}>{item.bodyText}</Text>
           <Text style={styles.memoListDate}>{dateToString(item.updateAt)}</Text>
         </View>
@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: 'rgba(0, 0, 0.15)',
+  },
+  memoInner: {
+    flex: 1,
   },
   memoListTitle: {
     fontSize: 16,
