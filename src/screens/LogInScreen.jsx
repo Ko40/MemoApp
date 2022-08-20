@@ -72,7 +72,7 @@ export default function LogInScreen(props) {
         />
         <Button
           label="Login"
-          onPress={handlePress()}
+          onPress={handlePress}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>You do not have an ID?</Text>

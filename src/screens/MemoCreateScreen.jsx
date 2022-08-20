@@ -43,7 +43,7 @@ export default function MemoCreateScreen(props) {
 
       <CircleButton
         name="check"
-        onPress={handlePress()}
+        onPress={handlePress}
       />
     </KeyboardAvoidingView>
   );

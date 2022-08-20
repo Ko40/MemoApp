@@ -51,7 +51,7 @@ export default function SignUpScreen(props) {
         />
         <Button
           label="Submit"
-          onPress={handlePress()}
+          onPress={handlePress}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>If you have an ID,</Text>
