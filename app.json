@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Memo-app",
-    "slug": "Memo-app",
+    "name": "Memo-japanteams",
+    "slug": "Memo-japanteams",
     "version": "1.0.0",
     "orientation": "portrait",
     "privacy": "unlisted",
@@ -9,7 +9,7 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -19,12 +19,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.japanteams.memoapp",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.japanteams.memoapp",
+      "versionCode": 1,
+      "permissions": [],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon_adaptive_foreground.png",
+        "backgroundImage": "./assets/icon_adaptive_background.png"
       }
     },
     "web": {
